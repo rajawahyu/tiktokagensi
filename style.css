@@ -240,3 +240,35 @@ body {
         margin: 0 auto 20px;
     }
 }
+/* Styling Tombol Menu Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gold-solid);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+        border-bottom: 2px solid var(--gold-solid);
+        transform: translateY(-150%); /* Sembunyi di atas */
+        transition: 0.4s ease-in-out;
+        z-index: -1;
+    }
+
+    .nav-links.active {
+        transform: translateY(0); /* Muncul saat diklik */
+    }
+}
